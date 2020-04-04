@@ -1,0 +1,12 @@
+{% block title %}enter code{% endblock %}
+{% block content %}
+ {% if sent %}
+   <p>{{result}}</p>
+ {% else %}
+ <form action="." method="post">
+ {{ form.as_p }}
+ {% csrf_token %}
+ <input type="submit" value="Send code">
+ </form>
+ {% endif %}
+{% endblock %}
